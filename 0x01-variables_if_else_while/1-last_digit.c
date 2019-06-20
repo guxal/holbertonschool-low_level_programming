@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <string.h>
 #include <stdlib.h>
 #include <time.h>
 /* more headers goes there */
@@ -13,31 +12,24 @@
 int main(void)
 {
 	int n, last;
-	char *str1 = malloc(256);
-	//char str;
+
 	srand(time(0));
 	n = rand() - RAND_MAX / 2;
 	/* your code goes there */
 	printf("Last digit of %d ", n);
-	//printf("%i\n", phrase);
-	//printf("%d\n", n);
-	last = n%10;
+	last = n % 10;
 	printf("is %d ", last);
-	if(last < 6)
+	if (last < 6)
 	{
-	strcpy(str1,"and is less than 6 and not 0");
-///	str1[]="hola";
-//	str1="and is less than 6 and not 0";
+	printf("and is less than 6 and not 0\n");
 	}
-	if(last > 5 )
+	if (last > 5)
 	{
-	strcpy(str1,"and is greater than 5");
-//	str1="and is greater than 5";
+	printf("and is greater than 5\n");
 	}
-	if(last == 0){
-	strcpy(str1,"and is 0");
-//	str1="and is 0";
+	if (last == 0)
+	{
+	printf("and is 0\n");
 	}
-	printf("%s\n", str1);
 	return (0);
 }
