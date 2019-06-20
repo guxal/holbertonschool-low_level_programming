@@ -17,7 +17,7 @@ putchar(ch % 10 + '0');
 if (ch != 9)
 {
 putchar(',');
-putchar('\t');
+putchar(' ');
 }
 }
 putchar('\n');
