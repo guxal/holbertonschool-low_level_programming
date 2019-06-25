@@ -1,5 +1,3 @@
-#include <ctype.h>
-
 /**
  * _isalpha - writes the character c to stdout
  * @c: The character to print
@@ -9,5 +7,20 @@
  */
 int _isalpha(int c)
 {
-	return (isalpha(c));
+	int r = 0;
+	char i;
+
+	for (i = 'A'; i <= 'Z'; i++)
+	{
+		if (c == i)
+			r = 1;
+	}
+
+	for (i = 'a'; i <= 'z'; i++)
+	{
+		if (c == i)
+			r = 1;
+	}
+
+	return (r);
 }
