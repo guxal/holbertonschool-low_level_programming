@@ -1,6 +1,5 @@
-#include "holberton.h"
 #include <stdio.h>
-
+#include "holberton.h"
 /**
  * print_to_98 - absoluted value
  * @n: value
@@ -18,8 +17,8 @@ void print_to_98(int n)
 			if (i != 98)
 			{
 				printf(",");
+				putchar(' ');
 			}
-			printf(" ");
 		}
 
 	if (n < 98)
@@ -29,12 +28,12 @@ void print_to_98(int n)
 			if (i != 98)
 			{
 				printf(",");
+				putchar(' ');
 			}
-			printf(" ");
 		}
 
 	if (n == 98)
 		printf("%d", n);
 
-	printf("\n");
+	putchar('\n');
 }
