@@ -1,7 +1,14 @@
 #include "holberton.h"
 
-void _print(int c);
+void _print1(int c);
+void _print2(int c);
 
+/**
+ * _print1 - print value 1
+ * @c: integer
+ *
+ * Return: no return
+ */
 void _print1(int c)
 {
 	_putchar(' ');
@@ -9,8 +16,14 @@ void _print1(int c)
 	_putchar(c / 10 + '0');
 	_putchar(c % 10 + '0');
 }
-
-void _print2(int c){
+/**
+ * _print2 - print value 2
+ * @c: integer
+ *
+ * Return: no return
+ */
+void _print2(int c)
+{
 	int z = (c / 10) / 10;
 	int x = (c % 100) / 10;
 	int y = (c % 10);
@@ -21,15 +34,17 @@ void _print2(int c){
 	_putchar(y + '0');
 }
 /**
- * times_table - absoluted value
+ * print_times_table - print table times
+ * @n: value
  *
  * Return: absoluted.
  */
 void print_times_table(int n)
 {
 	int a, b, c;
-	
-	if( n <= 15 && n >= 0 ){
+
+	if (n <= 15 && n >= 0)
+	{
 	for (a = 0; a <= n; a++)
 	{
 		for (b = 0; b <= n; b++)
@@ -37,9 +52,12 @@ void print_times_table(int n)
 			c = a * b;
 			if (c > 9)
 			{
-				if(c > 99){
+				if (c > 99)
+				{
 					_print2(c);
-				}else{
+				}
+				else
+				{
 					_print1(c);
 				}
 			}
