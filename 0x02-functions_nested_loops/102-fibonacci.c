@@ -8,8 +8,8 @@
 void fibonacci(void)
 {
 	int i;
-	long long mult = 0;
-	int last = 1;
+	long long mult = 1;
+	int last = 0;
 
 	for (i = 0; i <= 50; i++)
 	{
