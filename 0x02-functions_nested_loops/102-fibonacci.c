@@ -3,9 +3,9 @@
 /**
  * fibonacci - print fibonacci 50 first numbers
  *
- * Return: none
+ * Return: 0
  */
-void fibonacci(void)
+int fibonacci(void)
 {
 	int i;
 	unsigned long mult = 1;
@@ -26,6 +26,7 @@ void fibonacci(void)
 		}
 	}
 	putchar('\n');
+	return (0);
 }
 /**
   * main - entry point
