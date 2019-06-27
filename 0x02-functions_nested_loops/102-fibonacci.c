@@ -11,7 +11,7 @@ void fibonacci(void)
 	unsigned long mult = 1;
 	int last = 0;
 
-	for (i = 0; i <= 50; i++)
+	for (i = 0; i < 50; i++)
 	{
 		int current;
 
@@ -19,8 +19,10 @@ void fibonacci(void)
 		mult = mult + last;
 		last = current;
 		printf("%1ld", mult);
+		if(i != 49){
 		putchar(',');
 		putchar(' ');
+		}
 	}
 	putchar('\n');
 }
