@@ -12,18 +12,18 @@ void more_numbers(void)
 
 	int cont = 10;
 
-	while(cont--)
+	while (cont--)
 	{
 	for (i = 0; i <= 14; i++)
 	{
 		a = i;
-		if(i > 9)
+		if (i > 9)
 		{
 			a = i / 10;
 			b = i % 10;
 		}
 		_putchar(a + '0');
-		if(i > 9)
+		if (i > 9)
 			_putchar(b + '0');
 	}
 	_putchar('\n');
