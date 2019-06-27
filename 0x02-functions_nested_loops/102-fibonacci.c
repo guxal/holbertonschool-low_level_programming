@@ -19,7 +19,8 @@ void fibonacci(void)
 		mult = mult + last;
 		last = current;
 		printf("%1ld", mult);
-		if(i != 49){
+		if (i != 49)
+		{
 		putchar(',');
 		putchar(' ');
 		}
