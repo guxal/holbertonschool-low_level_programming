@@ -1,8 +1,9 @@
 #include "holberton.h"
 /**
  * print_line - print line
+ * @n: number
  *
- *
+ * Return: none
  */
 void print_line(int n)
 {
