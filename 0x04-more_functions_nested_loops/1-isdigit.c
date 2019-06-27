@@ -9,9 +9,9 @@ int _isdigit(int c)
 	int v = 0;
 	int i;
 
-	for (i = 0; i <= 9; i++)
+	for (i = 48; i <= 58; i++)
 	{
-		if (c >= 48 && c <=  58)
+		if (c == i)
 			v = 1;
 	}
 	return (v);
