@@ -8,7 +8,7 @@
 void fibonacci(void)
 {
 	int i;
-	long long mult = 1;
+	unsigned long mult = 1;
 	int last = 0;
 
 	for (i = 0; i <= 50; i++)
@@ -18,7 +18,7 @@ void fibonacci(void)
 		current = mult;
 		mult = mult + last;
 		last = current;
-		printf("%1lld", mult);
+		printf("%1ld", mult);
 		putchar(',');
 		putchar(' ');
 	}
