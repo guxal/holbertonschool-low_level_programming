@@ -20,7 +20,7 @@ int main(void)
 void print_prime_factor(void)
 {
 	unsigned long long num = 612852475143;
-	int i;
+	unsigned int i;
 
 	for (i = 2; i <= num; i++)
 	{
@@ -37,6 +37,6 @@ void print_prime_factor(void)
 		}
 	}
 
-	printf("final : %d\n", i);
+	printf("%d\n", i);
 
 }
