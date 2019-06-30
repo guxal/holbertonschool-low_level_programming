@@ -25,12 +25,6 @@ void print_prime_factor(void)
 	{
 		if (num % i == 0)
 		{
-
-		/*
-		 *	printf("divisiones %d\n", i);
-		 *	printf("numero resultado : %lld\n", num);
-		 */
-
 			num = num / i;
 			i--;
 		}
