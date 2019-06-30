@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include "holberton.h"
 
 void print_prime_factor(void);
 /**
