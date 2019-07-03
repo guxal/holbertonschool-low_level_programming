@@ -22,7 +22,7 @@ int _atoi(char *s)
 	int str = _strlen(s);
 	int i;
 	int sign = 1;
-	int sum = 0;
+	unsigned int sum = 0;
 
 	for (i = 0; i <= str; i++)
 	{
