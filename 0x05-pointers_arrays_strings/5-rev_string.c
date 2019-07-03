@@ -1,37 +1,39 @@
 #include "holberton.h"
 #include <stdio.h>
 /**
- *
- *
- *
+ * _strlen - strlen
+ * @s: data strlen
+ * Return: value
  */
 int _strlen(char *s)
 {
 	int n = 0;
 
-	while (s[n]) ++n;
+	while (s[n])
+		++n;
+
 	return (n);
 }
-
+/**
+ * rev_string - reverse string
+ * @s: value reverse string
+ * Return: pointer
+ */
 void rev_string(char *s)
 {
+	int str = _strlen(s);
+	int i;
+	int j = 0;
 	char s1[10];
 
-	//printf("data1: %s\n", s);
-
-	//printf("data: %s\n", s1);
-	//s1[0] = 'H';
-	//s1[1] = 'o';
-	//char *d = &data;
-	//*d = 'H';
-	int i;
-	int c = 0;
-
-	for (i = 10; i >= 0; i--)
+	for (i = str - 1; i >= 0; i--)
 	{
-		s1[c]= s[i];
-		c++;
-	}	
-	printf("%s\n" , s1);
-	//*s = &data;
+		s1[j] = s[i];
+		j++;
+	}
+	i = 0;
+	for (; i <= str; i++)
+	{
+		s[i] = s1[i];
+	}
 }
