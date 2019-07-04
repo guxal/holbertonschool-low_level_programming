@@ -10,13 +10,13 @@ char *cap_string(char *s)
 
 	while (s[i])
 	{
-		if(flat == 1)
+		if (flat == 1)
 		{
-			if(s[i] > 'a' && s[i] < 'z')
+			if (s[i] > 'a' && s[i] < 'z')
 				s[i] = s[i] - 32;
 			flat = 0;
 		}
-		if(s[i] == ' ')
+		if (s[i] == ' ')
 		{
 			flat = 1;
 		}
