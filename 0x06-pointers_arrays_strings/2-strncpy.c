@@ -21,13 +21,14 @@ int _strlen(char *s)
  */
 char *_strncpy(char *dest, char *src, int n)
 {
-	int str_length_max =  n;
 	int i;
 
-	for (i = 0; i < str_length_max; i++)
+	for (i = 0; i < n && i < _strlen(src); i++)
 	{
 		dest[i] = src[i];
 	}
+	for (; i < n; i++)
+		dest[i] = '\0';
 
 	return (dest);
 }
