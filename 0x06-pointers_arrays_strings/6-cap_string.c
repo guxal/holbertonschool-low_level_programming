@@ -30,7 +30,7 @@ char *cap_string(char *s)
 		(s[i] == '\t') ||
 		(s[i] == '\n'))
 			flat = 1;
-		if(s[i] == '\t')
+		if (s[i] == '\t')
 			s[i] = ' ';
 		++i;
 	}
