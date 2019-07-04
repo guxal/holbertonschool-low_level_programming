@@ -13,25 +13,26 @@ int _strlen(char *s)
 	return (n);
 }
 /**
- * *_strcat - concatene two strings
+ * *_strncat - concatene two strings
  * @dest: destinity
  * @src: source
+ * @n: number byte
  * Return: dest
  */
-char *_strcat(char *dest, char *src)
+char *_strncat(char *dest, char *src, int n)
 {
 	int str_length_dest = _strlen(dest);
-	int str_length_src = _strlen(src);
-	int str_length_max = str_length_dest + str_length_src - 1;
+	int str_length_max = str_length_dest + n - 1;
 	int i;
 	int count = 0;
 
 	for (i = str_length_dest; i <= str_length_max; i++)
 	{
+		if (src[count] == 0)
+			break;
 		dest[i] = src[count];
 		count++;
 	}
-	dest[i] = '\0';
 
 	return (dest);
 }
