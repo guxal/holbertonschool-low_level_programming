@@ -3,7 +3,7 @@
  * @s: array memory
  * @b: constant byte
  * @n: memory length
- * Return: array @s
+ * Return: array *s
  */
 char *_memset(char *s, char b, unsigned int n)
 {
