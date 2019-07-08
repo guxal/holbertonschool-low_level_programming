@@ -3,16 +3,15 @@
  * @dest: destination copy
  * @src: source copy
  * @n: number bytes copy
- * Return: destination @dest
+ * Return: destination *dest
  */
 char *_memcpy(char *dest, char *src, unsigned int n)
 {
-	unsigned int i;
+	char *d = dest;
+	const char *s = src;
 
-	for (i = 0; i <= n; i++)
-	{
-		dest[i] = src[i];
-	}
+	while (n--)
+		*d++ = *s++;
 
 	return (dest);
 }
