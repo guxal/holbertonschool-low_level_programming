@@ -1,6 +1,8 @@
 #ifndef HOLBERTON_H
 #define HOLBERTON_H
 
+int _putchar(char c);
+
 char *_strchr(char *s, char c);
 
 char *_memcpy(char *dest, char *src, unsigned int n);
