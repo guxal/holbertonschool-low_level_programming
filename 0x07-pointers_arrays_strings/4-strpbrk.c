@@ -6,31 +6,22 @@
  */
 char *_strpbrk(char *s, char *accept)
 {
-	int i = 0;
-	int j = 0;
-	char arr[1024];
-	int count = 0;
 
-	while (s[i])
+	int j;
+
+	while (*s)
 	{
+		j = 0;
 		while (accept[j])
 		{
-			if (s[i] == accept[j])
+			if (*s == accept[j])
 			{
-				arr[count] = s[i];
-				count++;
+				return (s);
 			}
 			++j;
 		}
-		if (s[i] == ',' || s[i] == ' ')
-		{
-			arr[count] = s[i];
-			count++;
-		}
-		++i;
-		j = 0;
+		s++;
 	}
-	arr[count] = '\0';
-	s = arr;
-	return (s);
+
+	return ("\0");
 }
