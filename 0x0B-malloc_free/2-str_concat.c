@@ -32,9 +32,9 @@ char *str_concat(char *s1, char *s2)
 		s2 = "";
 	str1 = _strlen(s1);
 	str2 = _strlen(s2);
-	strglobal = str1 + str2;
+	strglobal = str1 + str2 + 1;
 	new = malloc(strglobal);
-	if (!new)
+	if (new == NULL)
 		return (NULL);
 	for (; i < strglobal; i++)
 	{
