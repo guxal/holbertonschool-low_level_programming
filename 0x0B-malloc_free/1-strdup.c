@@ -1,12 +1,17 @@
 #include <stdlib.h>
+/**
+ * _strlen - strlen
+ * @str: string
+ * Return: integer length
+ */
 int _strlen(char *str)
 {
 	int i = 0;
+
 	while (str[i])
 		++i;
-	return i;
+	return (i);
 }
-
 /**
  * *_strdup - duplicate string
  * @str: string
