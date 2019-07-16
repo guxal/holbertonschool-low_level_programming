@@ -22,27 +22,37 @@ char *str_concat(char *s1, char *s2)
 {
 	int str1 = _strlen(s1);
 	int str2 = _strlen(s2);
+	int strglobal = 0;
 	int i = 0;
 	char *new;
 
-	new = malloc(str1 + str2);
-
+	if (str1 == 0)
+		strglobal = str2;
+	if (str2 == 0)
+		strglobal = str1;
+	if (str1 != 0 && str2 != 0)
+		strglobal = str1 + str2;
+	new = malloc(strglobal);
 	if (!new)
 		return (NULL);
-
-	if (str1 == 0)
-		return (s2);
-	if (str2 == 0)
-		return (s1);
-
-	for (; i <= (str1 + str2); i++)
+	for (; i <= strglobal; i++)
 	{
-		if (i < str1)
+		if (str1 == 0)
+		{
+			new[i] = s2[i];
+		}
+		if (str2 == 0)
+		{
 			new[i] = s1[i];
-		else
-			new[i] = s2[i - str1];
+		}
+		if (str1 != 0 && str2 != 0)
+		{
+			if (i < str1)
+				new[i] = s1[i];
+			else
+				new[i] = s2[i - str1];
+		}
 	}
 	new[i] = '\0';
-
 	return (new);
 }
