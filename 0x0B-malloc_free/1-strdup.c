@@ -1,5 +1,12 @@
-#include <string.h>
 #include <stdlib.h>
+int _strlen(char *str)
+{
+	int i = 0;
+	while (str[i])
+		++i;
+	return i;
+}
+
 /**
  * *_strdup - duplicate string
  * @str: string
@@ -10,7 +17,7 @@ char *_strdup(char *str)
 	char *new;
 	int i = 0;
 
-	new = malloc(strlen(str) + 1);
+	new = malloc(_strlen(str) + 1);
 
 	if (*str == 0)
 		return (0);
