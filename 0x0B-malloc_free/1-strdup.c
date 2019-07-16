@@ -1,3 +1,4 @@
+#include <string.h>
 #include <stdlib.h>
 /**
  * *_strdup - duplicate string
@@ -9,7 +10,7 @@ char *_strdup(char *str)
 	char *new;
 	int i = 0;
 
-	new = malloc(sizeof(str) + 1);
+	new = malloc(strlen(str) + 1);
 
 	if (*str == 0)
 		return (0);
