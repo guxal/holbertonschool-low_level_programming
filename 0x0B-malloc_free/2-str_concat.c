@@ -20,38 +20,27 @@ int _strlen(char *str)
  */
 char *str_concat(char *s1, char *s2)
 {
-	int str1 = _strlen(s1);
-	int str2 = _strlen(s2);
+	int str1 = 0;
+	int str2 = 0;
 	int strglobal = 0;
 	int i = 0;
 	char *new;
 
-	if (str1 == 0)
-		strglobal = str2;
-	if (str2 == 0)
-		strglobal = str1;
-	if (str1 != 0 && str2 != 0)
-		strglobal = str1 + str2;
-	new = malloc(strglobal);
+	if (s1 == NULL)
+		s1 = "";
+	if (s2 == NULL)
+		s2 = "";
+	str1 = _strlen(s1);
+	str2 = _strlen(s2);
+	new = malloc(str1 + str2);
 	if (!new)
 		return (NULL);
 	for (; i <= strglobal; i++)
 	{
-		if (str1 == 0)
-		{
-			new[i] = s2[i];
-		}
-		if (str2 == 0)
-		{
+		if (i < str1)
 			new[i] = s1[i];
-		}
-		if (str1 != 0 && str2 != 0)
-		{
-			if (i < str1)
-				new[i] = s1[i];
-			else
-				new[i] = s2[i - str1];
-		}
+		else
+			new[i] = s2[i - str1];
 	}
 	new[i] = '\0';
 	return (new);
