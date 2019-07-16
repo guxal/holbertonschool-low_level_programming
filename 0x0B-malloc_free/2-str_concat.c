@@ -36,7 +36,7 @@ char *str_concat(char *s1, char *s2)
 	new = malloc(strglobal);
 	if (!new)
 		return (NULL);
-	for (; i <= strglobal; i++)
+	for (; i < strglobal; i++)
 	{
 		if (i < str1)
 			new[i] = s1[i];
