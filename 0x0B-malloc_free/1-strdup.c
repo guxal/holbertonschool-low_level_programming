@@ -22,18 +22,18 @@ char *_strdup(char *str)
 	char *new;
 	int i = 0;
 
-	new = malloc(_strlen(str) + 1);
+	new = (char*) malloc(_strlen(str) + 1);
 
-	if (str == 0)
-		return (0);
-	if (!new)
-		return (0);
+	if (str == NULL)
+		return (NULL);
+	if (new == NULL)
+		return (NULL);
 	while (str[i])
 	{
 		new[i] = str[i];
 		i++;
 	}
-	new[i + 1] = '\0';
+	new[i] = '\0';
 
 	return (new);
 }
