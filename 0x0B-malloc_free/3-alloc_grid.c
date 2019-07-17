@@ -27,10 +27,10 @@ int **alloc_grid(int width, int height)
 
 	if (width <= 0 || height <= 0)
 		return (NULL);
-	table = malloc(width + 1);
+	table = malloc(height + 1);
 	for (i = 0; i < width; i++)
 	{
-		table[i] = malloc(height);
+		table[i] = malloc(width);
 		if (table[i] == NULL)
 		{
 			delete_memory(table, i);
