@@ -9,6 +9,7 @@
 void delete_memory(int **table, int value)
 {
 	int i;
+
 	free(table);
 	for (i = 0; i < value; i++)
 		free(table[i]);
@@ -40,7 +41,7 @@ int **alloc_grid(int width, int height)
 		}
 	}
 	i = 0;
-	j= 0;
+	j = 0;
 	for (i = 0; i < height; i++)
 	{
 		for (j = 0; j < width; j++)
