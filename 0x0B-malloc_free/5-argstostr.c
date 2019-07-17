@@ -32,11 +32,10 @@ char *argstostr(int ac, char **av)
 
 	while (ac--)
 	{
-		cont += _strlen(av[ac]) + 1;
+		cont += _strlen(av[ac]);
 	}
-
+	cont = cont + 5;
 	chain = (char *)malloc(cont * sizeof(char *));
-
 	while (rc--)
 	{
 		ac = 0;
