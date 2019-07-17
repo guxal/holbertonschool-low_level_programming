@@ -1,4 +1,5 @@
 #include <stdlib.h>
+#include "holberton.h"
 /**
  * free_grid - free
  * @grid: grid
