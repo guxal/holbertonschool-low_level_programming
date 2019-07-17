@@ -8,9 +8,8 @@
  */
 void delete_memory(int **table, int value)
 {
-	--value;
-	while (value--)
-		free(table[value]);
+	while (value)
+		free(table[--value]);
 	free(table);
 }
 /**
@@ -27,16 +26,22 @@ int **alloc_grid(int width, int height)
 
 	if (width <= 0 || height <= 0)
 		return (NULL);
-	table = malloc(height + 1);
-	for (i = 0; i < width; i++)
+	table = malloc(width * sizeof(int *));
+	if (table == NULL)
+		return (NULL);
+	for (i = 0; i < height; i++)
 	{
-		table[i] = malloc(width);
+		table[i] = malloc(height * sizeof(int));
 		if (table[i] == NULL)
 		{
 			delete_memory(table, i);
 			return (NULL);
 		}
-		for (j = 0; j < height; j++)
+	}
+
+	for (i = 0; i < height; i++)
+	{
+		for (j = 0; j < width; j++)
 		{
 			table[i][j] = 0;
 			if (j == (height - 1))
