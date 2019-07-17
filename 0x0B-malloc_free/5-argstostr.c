@@ -34,6 +34,7 @@ char *argstostr(int ac, char **av)
 	{
 		cont += _strlen(av[ac]) + 1;
 	}
+	cont++;
 	chain = malloc(cont * sizeof(char));
 	while (rc--)
 	{
