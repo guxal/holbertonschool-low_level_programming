@@ -25,8 +25,9 @@ int **alloc_grid(int width, int height)
 	int i;
 	int j;
 
-	table = malloc(width);
-
+	if (width <= 0 || height <= 0)
+		return (NULL);
+	table = malloc(width + 1);
 	for (i = 0; i < width; i++)
 	{
 		table[i] = malloc(height);
@@ -38,8 +39,11 @@ int **alloc_grid(int width, int height)
 		for (j = 0; j < height; j++)
 		{
 			table[i][j] = 0;
+			if (j == (height - 1))
+			{
+				table[i][j + 1] = '\0';
+			}
 		}
 	}
-
 	return (table);
 }
