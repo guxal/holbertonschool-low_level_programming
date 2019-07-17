@@ -8,9 +8,9 @@
  */
 void delete_memory(int **table, int value)
 {
+	free(table);
 	while (value)
 		free(table[--value]);
-	free(table);
 }
 /**
  * alloc_grid - alloc grid
@@ -44,10 +44,6 @@ int **alloc_grid(int width, int height)
 		for (j = 0; j < width; j++)
 		{
 			table[i][j] = 0;
-			if (j == (height - 1))
-			{
-				table[i][j + 1] = '\0';
-			}
 		}
 	}
 	return (table);
