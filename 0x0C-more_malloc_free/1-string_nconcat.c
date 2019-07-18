@@ -50,6 +50,6 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		else
 			newstring[i] = s2[i - strlen_s1];
 	}
-	newstring[i + 1] = '\0';
+	newstring[i] = '\0';
 	return (newstring);
 }
