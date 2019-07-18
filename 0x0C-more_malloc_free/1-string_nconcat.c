@@ -8,7 +8,7 @@ unsigned int _strlen(char *str)
 {
 	unsigned int i = 0;
 
-	while (str[i])
+	while (str[i] != 0)
 		i++;
 	return (i);
 }
@@ -36,13 +36,14 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	strlen_s1 = _strlen(s1);
 	strlen_s2 = _strlen(s2);
 
-	if (strlen_s2 < n)
+	if (n >= strlen_s2)
 		_malloc = strlen_s1 + strlen_s2;
 	else
 		_malloc = strlen_s1 + n;
 
 	newstring = malloc(sizeof(char) * (_malloc + 1));
-
+	if (newstring == NULL)
+		return (NULL);
 	for (i = 0; i < _malloc; i++)
 	{
 		if (i < strlen_s1)
