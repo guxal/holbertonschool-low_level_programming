@@ -9,7 +9,7 @@
  */
 dog_t *new_dog(char *name, float age, char *owner)
 {
-	dog_t *cnew_dog;
+	struct dog *cnew_dog;
 	char *copyn, *copyo;
 
 	cnew_dog = malloc(sizeof(struct dog));
