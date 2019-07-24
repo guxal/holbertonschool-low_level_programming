@@ -1,6 +1,12 @@
 #include <ctype.h>
 #include <stdlib.h>
 #include <stdio.h>
+#define __RETURN__(value) \
+	(__extension__ \
+	 ({ \
+	  printf("Error\n"); \
+	  value; \
+	  }))
 /**
  * main - advance
  * @argc: argument numb
@@ -14,12 +20,12 @@ int main(int argc, char *argv[])
 	int i;
 
 	if (argc != 2)
-		return (1);
+		return (__RETURN__(1));
 
 	var = atoi(argv[1]);
 
 	if (var < 0)
-		return (2);
+		return (__RETURN__(2));
 
 	for (i = 0; i < var - 1; i++)
 	{
