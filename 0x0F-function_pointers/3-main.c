@@ -20,6 +20,10 @@ int main(int argc, char *argv[])
 		return (__RETURN__(100));
 
 	ptr = get_op_func(argv[2]);
+
+	if (ptr == NULL)
+		return (__RETURN__(99));
+
 	result = ptr(atoi(argv[1]), atoi(argv[3]));
 	printf("%d\n", result);
 	return (0);
