@@ -1,7 +1,11 @@
 #ifndef HOLBERTON_H
 #define HOLBERTON_H
 #define __RETURN__(value) \
-(__extension__ ({ printf("Error\n"); value; }) )
+	(__extension__ \
+	 ({ \
+	  printf("Error\n"); \
+	  value; \
+	  }))
 /**
  * struct op - Struct op
  *
@@ -10,8 +14,8 @@
  */
 typedef struct op
 {
-    char *op;
-    int (*f)(int a, int b);
+	char *op;
+	int (*f)(int a, int b);
 } op_t;
 
 int op_add(int a, int b);
