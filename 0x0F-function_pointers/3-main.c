@@ -2,11 +2,17 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+/**
+ * main - calculator main
+ * @argc: number arguments
+ * @argv: array arguments
+ * Return: success (integer)
+ */
 int main(int argc, char *argv[])
 {
 	int result;
-	int (*ptr) (int, int);
-	
+	int (*ptr)(int, int);
+
 	if (argc != 4)
 		return (__RETURN__(98));
 
