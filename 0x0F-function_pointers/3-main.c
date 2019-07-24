@@ -11,7 +11,7 @@ int main(int argc, char *argv[])
 		return (__RETURN__(98));
 
 	if (atoi(argv[3]) == 0 && (*argv[2] == '%' || *argv[2] == '/'))
-		return (__RETURN__(99));
+		return (__RETURN__(100));
 
 	ptr = get_op_func(argv[2]);
 	result = ptr(atoi(argv[1]), atoi(argv[3]));
