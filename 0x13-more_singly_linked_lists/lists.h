@@ -1,5 +1,6 @@
 #ifndef _HOLBERTON_H_
 #define _HOLBERTON_H_
+#include <string.h>
 /**
  * struct listint_s - singly linked list
  * @n: integer
