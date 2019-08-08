@@ -23,6 +23,8 @@ unsigned int binary_to_uint(const char *b)
 	int base = 1;
 	int strlen = _strlen(b) - 1;
 
+	if (b == '\0')
+		return (0);
 	while (b[count])
 	{
 		if (b[count] != 48 && b[count] != 49)
