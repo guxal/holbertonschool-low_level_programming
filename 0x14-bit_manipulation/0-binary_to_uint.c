@@ -1,3 +1,4 @@
+#include <stdlib.h>
 /**
  * _strlen - string length
  * @str: string count
@@ -23,7 +24,7 @@ unsigned int binary_to_uint(const char *b)
 	int base = 1;
 	int strlen = _strlen(b) - 1;
 
-	if (b == '\0')
+	if (b == NULL)
 		return (0);
 	while (b[count])
 	{
