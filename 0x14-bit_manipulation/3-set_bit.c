@@ -6,6 +6,6 @@
  */
 int set_bit(unsigned long int *n, unsigned int index)
 {
-	*n = (1 << index) | *n;
+	(index < 64) ? *n |= (1 << index) : 0;
 	return ((index >= 64) ? (unsigned int)(-1) : 1);
 }
