@@ -1,23 +1,9 @@
 #include <stdio.h>
+
 #include <stdlib.h>
-#include <sys/types.h>
-#include <sys/stat.h>
 #include <fcntl.h>
 #include <unistd.h>
-/**
- * _strlen - str length
- * @str: string
- * Return: integer length
- */
-int _strlen(char *str)
-{
-	int count = 0;
-
-	while (str[count])
-		++count;
-
-	return (count);
-}
+#include "holberton.h"
 /**
  * read_textfile - read textfile
  * @filename: filename open
@@ -28,23 +14,19 @@ ssize_t read_textfile(const char *filename, size_t letters)
 {
 	int fd;
 	char *buf;
+	int _strlen;
 
+	if (filename == NULL)
+		return (0);
 	fd = open(filename, O_RDONLY);
-
 	if (fd == -1)
-	{
-		printf("Failed to open and read the file\n");
-		exit(1);
-	}
+		return (0);
 	buf = malloc((sizeof(char) * letters) - 1);
 	if (buf == NULL)
 		return (0);
-
-	read(fd, buf, letters);
-
+	_strlen = read(fd, buf, letters);
 	close(fd);
-
-	printf("%s\n", buf);
-
-	return (_strlen(buf));
+	if (write(STDOUT_FILENO, buf, _strlen) != _strlen)
+		return (0);
+	return (_strlen);
 }
