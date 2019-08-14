@@ -17,10 +17,6 @@ int main(int argc, char *argv[])
 
 	if (argc != 3)
 		return (__RETURN__(97, "Usage: cp file_from file_to"));
-	if (argv[1] == NULL)
-		return (__RETURN__(98, "Error: Can't read from file"));
-	if (argv[2] == NULL)
-		return (__RETURN__(99, "Erro\r: Can't write to file"));
 	src = open(argv[1], O_RDONLY, 0600);
 	if (src == -1)
 		return (__RETURN__(98, "Error: Can't read from file NAME_OF_THE_FILE"));
