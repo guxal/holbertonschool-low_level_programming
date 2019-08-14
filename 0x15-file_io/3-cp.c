@@ -21,12 +21,18 @@ int main(int argc, char *argv[])
 	if (src == -1)
 		return (__RETURN__(98, "Error: Can't read from file NAME_OF_THE_FILE"));
 	_strlen = read(src, buf, 1024);
-	close(src);
 	dest = open(argv[2], O_WRONLY | O_APPEND | O_CREAT | O_TRUNC, 0600);
 	if (dest == -1)
 		return (__RETURN__(99, "Error: Can't write to NAME_OF_THE_FILE"));
-	if (write(dest, buf, _strlen) != _strlen)
-		return (__RETURN__(99, "Error: Can't write to NAME_OF_THE_FILE"));
+	while (_strlen != 0)
+	{
+		if (write(dest, buf, _strlen) != _strlen)
+			return (__RETURN__(99, "Error: Can't write to"));
+		_strlen = read(src, buf, 1024);
+		if (_strlen == -1)
+			return (__RETURN__(98, "Error: Can't read from file"));
+	}
+	close(src);
 	close(dest);
 	return (1);
 }
