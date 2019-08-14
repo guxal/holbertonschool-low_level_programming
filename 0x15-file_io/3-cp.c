@@ -21,8 +21,6 @@ int main(int argc, char *argv[])
 	if (src == -1)
 		return (__RETURN__(98, "Error: Can't read from file NAME_OF_THE_FILE"));
 	_strlen = read(src, buf, 1024);
-	if (_strlen == -1)
-		return (__RETURN__(98, "Error: Can't read from file"));
 	dest = open(argv[2], O_WRONLY | O_APPEND | O_CREAT | O_TRUNC, 0600);
 	if (dest == -1)
 		return (__RETURN__(99, "Error: Can't write to NAME_OF_THE_FILE"));
