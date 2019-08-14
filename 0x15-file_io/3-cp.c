@@ -32,7 +32,9 @@ int main(int argc, char *argv[])
 		if (_strlen == -1)
 			return (__RETURN__(98, "Error: Can't read from file"));
 	}
-	close(src);
-	close(dest);
+	if (close(src) == -1)
+		return (__RETURN__(100, "Error: Can't close fd"));
+	if (close(dest) == -1)
+		return (__RETURN__(100, "Error: Can't close fd"));
 	return (0);
 }
