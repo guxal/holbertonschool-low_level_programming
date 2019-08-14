@@ -17,11 +17,11 @@ int main(int argc, char *argv[])
 
 	if (argc != 3)
 		return (__RETURN__(97, "Usage: cp file_from file_to"));
-	src = open(argv[1], O_RDONLY, 0600);
+	src = open(argv[1], O_RDONLY);
 	if (src == -1)
 		return (__RETURN__(98, "Error: Can't read from file NAME_OF_THE_FILE"));
 	_strlen = read(src, buf, 1024);
-	dest = open(argv[2], O_WRONLY | O_APPEND | O_CREAT | O_TRUNC, 0600);
+	dest = open(argv[2], O_WRONLY | O_APPEND | O_CREAT | O_TRUNC, 0664);
 	if (dest == -1)
 		return (__RETURN__(99, "Error: Can't write to NAME_OF_THE_FILE"));
 	while (_strlen != 0)
