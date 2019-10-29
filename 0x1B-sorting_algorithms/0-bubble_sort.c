@@ -22,6 +22,7 @@ void bubble_sort(int *array, size_t size)
 {
 	bool swapped = false;
 	size_t i;
+	int newn = 0;
 
 	if (!array)
 		return;
@@ -33,10 +34,11 @@ void bubble_sort(int *array, size_t size)
 			swap(&array[i - 1], &array[i]);
 			swapped = true;
 			print_array(array, size);
+			newn = i;
 		}
 	}
-	if (swapped)
+	if (swapped && newn > 1)
 	{
-		bubble_sort(array, size);
+		bubble_sort(array, newn);
 	}
 }
