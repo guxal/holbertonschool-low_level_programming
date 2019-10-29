@@ -39,6 +39,6 @@ void bubble_sort(int *array, size_t size)
 	}
 	if (swapped && newn > 1)
 	{
-		bubble_sort(array, newn);
+		bubble_sort(array, size);
 	}
 }
