@@ -32,11 +32,11 @@ void bubble_sort(int *array, size_t size)
 		{
 			swap(&array[i - 1], &array[i]);
 			swapped = true;
+			print_array(array, size);
 		}
 	}
 	if (swapped)
 	{
-		print_array(array, size);
 		bubble_sort(array, size);
 	}
 }
