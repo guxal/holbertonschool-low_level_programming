@@ -7,14 +7,12 @@ all: ${OBJ}
 	${CC} ${SRC} -o ${NAME}
 
 clean:
-	${RM} *~ ${NAME}
+	$(RM) *~ $(NAME)
 
 oclean:
-	${RM} ${OBJ}
+	$(RM) $(OBJ)
 
-fclean:
-	${RM} *~ ${NAME}
-	${RM} ${OBJ}
+fclean: clean oclean
 
 re:
 	oclean all
